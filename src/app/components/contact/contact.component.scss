@@ -1,0 +1,11 @@
+#contact {
+  padding: 3rem;
+  background: #ffffff;
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 500px;
+    margin: auto;
+  }
+}

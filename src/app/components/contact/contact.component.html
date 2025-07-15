@@ -1,1 +1,8 @@
-<p>contact works!</p>
+<section id="contact">
+    <h2>Contact Me</h2>
+    <form (ngSubmit)="submit()">
+        <input pInputText type="email" [(ngModel)]="email" name="email" placeholder="Your Email" required />
+        <textarea [(ngModel)]="message" name="message" rows="4" placeholder="Your Message"></textarea>
+        <button pButton type="submit" label="Send"></button>
+    </form>
+</section>
