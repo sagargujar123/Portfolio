@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { TagModule } from 'primeng/tag';
 
@@ -5,6 +6,7 @@ import { TagModule } from 'primeng/tag';
   selector: 'app-skills',
   standalone: true,
   imports: [
+    CommonModule,
     TagModule
   ],
   templateUrl: './skills.component.html',
