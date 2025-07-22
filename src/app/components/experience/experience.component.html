@@ -1,0 +1,27 @@
+<section id="experience" class="py-2 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Experience</h2>
+    <div class="row">
+      <div class="col-md-12 mb-4" *ngFor="let exp of experiences">
+        <div class="card h-100 text-white shadow-sm animate__animated animate__fadeInUp experience-card"
+             [ngClass]="exp.bgColor"
+             [style.animationDelay]="exp.delay"
+             (mouseenter)="exp.hover = true"
+             (mouseleave)="exp.hover = false"
+             [ngStyle]="{'transform': exp.hover ? 'translateY(-6px)' : 'translateY(0)', 'transition': '0.3s ease-in-out'}">
+          
+          <div class="card-body">
+            <h5 class="card-title">
+              <i [class]="exp.icon + ' me-2'"></i> {{exp.role}} 
+              <small class="text-white-50 ms-2"> {{exp.company}}</small>
+            </h5>
+            <h6 class="text-white-50">{{exp.dates}}</h6>
+            <ul class="mt-3">
+              <li *ngFor="let bul of exp.bullets">{{ bul }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

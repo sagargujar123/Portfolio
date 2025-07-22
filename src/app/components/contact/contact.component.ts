@@ -18,9 +18,9 @@ import { InputTextModule } from 'primeng/inputtext';
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
-  email = '';
-  message = '';
-  submit() {
-    alert(`Thanks for reaching out, ${this.email}!`);
-  }
+  onSubmit() {
+  // handle contact form logic (e.g. email API)
+  alert('Thanks for reaching out!');
+}
+
 }

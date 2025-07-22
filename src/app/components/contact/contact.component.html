@@ -1,8 +1,26 @@
-<section id="contact">
-    <h2>Contact Me</h2>
-    <form (ngSubmit)="submit()">
-        <input pInputText type="email" [(ngModel)]="email" name="email" placeholder="Your Email" required />
-        <textarea [(ngModel)]="message" name="message" rows="4" placeholder="Your Message"></textarea>
-        <button pButton type="submit" label="Send"></button>
-    </form>
+<section id="contact" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Contact Me</h2>
+    <div class="card shadow-lg p-4 rounded-4 mx-auto" style="max-width: 600px;">
+      <form #f="ngForm" (ngSubmit)="onSubmit()" novalidate>
+        <div class="mb-3">
+          <label for="name" class="form-label fw-semibold">Your Name</label>
+          <input id="name" name="name" ngModel type="text" class="form-control" placeholder="Enter your name" required>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label fw-semibold">Email Address</label>
+          <input id="email" name="email" ngModel type="email" class="form-control" placeholder="Enter your email" required>
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label fw-semibold">Your Message</label>
+          <textarea id="message" name="message" ngModel rows="4" class="form-control" placeholder="Write your message..." required></textarea>
+        </div>
+        <div class="text-end">
+          <button type="submit" class="btn btn-primary px-4">
+            <i class="bi bi-send me-2"></i>Send Message
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
 </section>

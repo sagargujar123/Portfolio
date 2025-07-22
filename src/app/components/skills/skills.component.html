@@ -1,6 +1,20 @@
-<section id="skills">
-  <h2>Skills</h2>
-  <div class="skill-tags">
-    <p-tag *ngFor="let skill of skills" [value]="skill" styleClass="mr-2 mb-2"></p-tag>
+<section id="skills" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Skills</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-2 col-sm-4 col-6 mb-4" *ngFor="let s of skills">
+        <div class="skill-card" [ngClass]="s.class">
+          <div class="card-inner">
+            <div class="card-front">
+              <i [ngClass]="s.icon"></i>
+              <span>{{ s.name }}</span>
+            </div>
+            <div class="card-back">
+              <p>{{ s.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>

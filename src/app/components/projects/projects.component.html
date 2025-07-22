@@ -1,8 +1,40 @@
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="project-grid">
-    <p-card *ngFor="let project of projects" [header]="project.title">
-      <p>{{ project.description }}</p>
-    </p-card>
+<section id="projects" class="bg-white">
+  <div class="container">
+    <h2 class="text-center mb-4">Projects</h2>
+    <div class="row">
+      <div class="col-md-4 mb-4" *ngFor="let p of projects">
+        <div class="card h-100 text-white project-card shadow animate__animated animate__zoomIn"
+             [ngClass]="p.bgColor"
+             (mouseenter)="p.hover = true"
+             (mouseleave)="p.hover = false"
+             [ngStyle]="{'transform': p.hover ? 'translateY(-8px)' : 'translateY(0)', 'transition': '0.3s ease-in-out'}">
+          
+          <div class="card-body">
+            <div class="text-center mb-2">
+              <i [class]="p.icon + ' fs-1'"></i>
+            </div>
+            <h5 class="card-title text-center">{{ p.title }}</h5>
+            <h6 class="card-subtitle mb-3 text-center">{{ p.subtitle }}</h6>
+
+            <ul class="card-text ps-3">
+              <li *ngFor="let point of getVisiblePoints(p)">
+                {{ point }}
+              </li>
+              <li *ngIf="p.descriptionPoints.length > 3 && !p.showAll">
+                <a href="#" (click)="p.showAll = true; $event.preventDefault()">View More...</a>
+              </li>
+              <li *ngIf="p.descriptionPoints.length > 3 && p.showAll">
+                <a href="#" (click)="p.showAll = false; $event.preventDefault()">View Less...</a>
+              </li>
+            </ul>
+          </div>
+          <div class="card-footer bg-transparent border-top-0 text-end">
+            <a [href]="p.repo" target="_blank" class="btn btn-sm btn-light text-dark">
+              <i class="bi bi-github me-1"></i> View Code
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>

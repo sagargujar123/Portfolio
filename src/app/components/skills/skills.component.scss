@@ -1,13 +1,75 @@
-#skills {
-  padding: 2rem;
+.skill-card {
+  width: 100%;
+  height: 150px;
+  perspective: 1000px;
+  border-radius: 1rem;
+  cursor: pointer;
 
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+  .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s ease;
+    transform-style: preserve-3d;
+    border-radius: 1rem;
   }
 
-  .skill-tags {
+  &:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .card-front,
+  .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    backface-visibility: hidden;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+    i {
+      font-size: 2rem;
+      margin-bottom: 0.4rem;
+    }
+
+    span {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    p {
+      font-size: 0.75rem;
+      color: #333;
+      margin: 0;
+      padding: 0 0.3rem;
+    }
   }
+
+  .card-front {
+    background: linear-gradient(311deg, #ffffff, #d9d4d4);
+  }
+
+  .card-back {
+    transform: rotateY(180deg);
+    background: linear-gradient(135deg, #d6eaff, #e9f1ff);
+  }
+
+  // Example background color class bindings per skill
+  &.angular i { color: #dd0031; }
+  &.typescript i { color: #3178c6; }
+  &.javascript i { color: #f7df1e; }
+  &.rxjs i { color: #b7178c; }
+  &.ngrx i { color: #a50034; }
+  &.bootstrap i { color: #7952b3; }
+  &.scss i { color: #cd6799; }
+  &.html i { color: #e34f26; }
+  &.css i { color: #264de4; }
+  &.jwt i { color: #0d6efd; }
+  &.reactnative i { color: #61dafb; }
 }

@@ -1,0 +1,29 @@
+.experience-card {
+  border: none;
+  border-radius: 1rem;
+  padding: 1rem;
+  transition: transform 0.3s ease-in-out;
+
+  .card-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 1.2rem;
+
+    li {
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+    }
+  }
+}
+
+.bg-gradient-exp1 {
+  background: linear-gradient(135deg, #02bc8a, #99f2c8);
+}
+
+.bg-gradient-exp2 {
+  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+}

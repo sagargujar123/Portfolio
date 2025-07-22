@@ -1,9 +1,42 @@
-#projects {
-  padding: 3rem;
-  background: #f0f0f0;
-  .project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
+.project-card {
+  border: none;
+  border-radius: 1rem;
+  transition: transform 0.3s ease-in-out;
+
+  .card-body {
+    padding: 1.2rem;
   }
+
+  .card-footer {
+    background: transparent;
+  }
+}
+
+.bg-gradient-tms {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+.bg-gradient-ims {
+  background: linear-gradient(135deg, #355c7d, #6c5b7b, #c06c84);
+}
+.bg-gradient-hisaab {
+  background: linear-gradient(135deg, #11998e, #38ef7d);
+}
+.bg-gradient-driver {
+  background: linear-gradient(135deg, #0575e6, #00f260);
+}
+.bg-gradient-auth {
+  background: linear-gradient(135deg, #fc4a1a, #f7b733);
+}
+
+.card-text li {
+  font-size: 0.92rem;
+  margin-bottom: 0.4rem;
+  list-style: disc;
+}
+
+.card-text a {
+  color: #ffffff;
+  font-size: 0.85rem;
+  text-decoration: underline;
+  cursor: pointer;
 }
